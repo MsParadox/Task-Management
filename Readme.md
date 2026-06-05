@@ -4,7 +4,7 @@
 
 ### _Streamline your workflow. Collaborate smarter. Ship faster._
 
-[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_App-4F46E5?style=for-the-badge)](https://task-management-org.vercel.app)
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_App-4F46E5?style=for-the-badge)](https://task-management-5cqq.vercel.app)
 [![MIT License](https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge)](LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js-24.x-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org)
 [![React](https://img.shields.io/badge/React-Vite-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
@@ -184,7 +184,7 @@ Open [http://localhost:5173](http://localhost:5173) in your browser. 🎉
 
 ## 🚀 Live Demo
 
-Try the live application here → **[task-management-org.vercel.app](https://task-management-org.vercel.app)**
+Try the live application here → **[task-management-5cqq.vercel.app](https://task-management-5cqq.vercel.app)**
 
 ---
 

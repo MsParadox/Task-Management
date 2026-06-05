@@ -6,7 +6,7 @@
 
 [![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_App-4F46E5?style=for-the-badge)](https://task-management-org.vercel.app)
 [![MIT License](https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge)](LICENSE)
-[![Node.js](https://img.shields.io/badge/Node.js-18.17.1-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org)
+[![Node.js](https://img.shields.io/badge/Node.js-24.x-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org)
 [![React](https://img.shields.io/badge/React-Vite-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
 [![MongoDB](https://img.shields.io/badge/MongoDB-Database-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://mongodb.com)
 
@@ -98,7 +98,7 @@
 ## ⚙️ Setup Instructions
 
 ### Prerequisites
-- **Node.js** `v18.17.1`
+- **Node.js** `v24.x`
 - **npm** or **yarn**
 - A running **MongoDB** instance
 

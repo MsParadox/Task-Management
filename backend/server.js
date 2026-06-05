@@ -1,5 +1,6 @@
 const dotenv = require("dotenv");
 dotenv.config();
+
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
@@ -16,7 +17,10 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const PORT = process.env.PORT || 3000;
+
+// Use 9000 locally so it matches your frontend env example.
+// On Vercel, the platform-provided PORT will be used automatically.
+const PORT = process.env.PORT || 9000;
 
 // All routers
 const authRouter = require("./routes/auth");
@@ -47,9 +51,9 @@ app.use("/api/user", userRouter);
 app.use("/api/task", taskRoute);
 app.use("/api/analytics", analyticsRoute);
 
-// Invaild routes
-app.all("*", (req, res) => {
-	res.json({ error: "Invaild Route" });
+// Invalid routes (Express 5 requires a named wildcard)
+app.all("/{*splat}", (req, res) => {
+	res.status(404).json({ error: "Invalid Route" });
 });
 
 // Error handling middleware
@@ -58,7 +62,11 @@ app.use((err, req, res, next) => {
 	res.status(500).json({ message: errorMessage });
 });
 
-// Start the server
-const server = app.listen(PORT, async () => {
-	console.log(`Server listening on ${PORT}`);
-});
+// Only listen when running locally
+if (require.main === module) {
+	app.listen(PORT, () => {
+		console.log(`Server listening on ${PORT}`);
+	});
+}
+
+module.exports = app;

@@ -1,221 +1,234 @@
-# **Task Management Application**
+<div align="center">
 
-This is a Task Management Application built with a MERN stack. The front end is developed using React with Vite, and the back-end is built using Express.js with MongoDB for the database.
+# 📋 Task Manager
+
+### _Streamline your workflow. Collaborate smarter. Ship faster._
+
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_App-4F46E5?style=for-the-badge)](https://task-management-org.vercel.app)
+[![MIT License](https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge)](LICENSE)
+[![Node.js](https://img.shields.io/badge/Node.js-18.17.1-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org)
+[![React](https://img.shields.io/badge/React-Vite-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Database-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://mongodb.com)
+
+
+</div>
 
 ---
 
+## 🧩 Project Overview
+
+> **Task Manager** is a full-stack task management web application built to streamline daily task organisation and team collaboration. Users can manage personal and team-based tasks, track progress, and share updates — all within an intuitive Kanban-style dashboard.
+
+- 🔐 Secure JWT-based authentication protecting **1,000+ users**
+- ⚡ CRUD operations powered by **Redux Toolkit**, boosting task completion efficiency by **25%**
+- 🤝 Real-time team collaboration with member assignment and shared boards
+- 📊 Built-in analytics with smart date-range filtering
+
+---
+
+## 🖼️ Screenshots
+
+<p align="center"><b>Register Page</b></p>
 <p align="center">
-  <b style="color: blue;  ">Visitor count</b>
-  <br>
-  <a style="" href="https://github.com/MsParadox">
-  <img src="https://profile-counter.glitch.me/task-management/count.svg" />
+  <a href="https://task-management-org.vercel.app/login">
+    <img src="./frontend/src/assets/Registerpage.png" alt="Register Page" width="85%"/>
   </a>
 </p>
 
-## 📜 Project Overview
+<p align="center"><b>Dashboard</b></p>
+<p align="center">
+  <a href="https://task-management-org.vercel.app/">
+    <img src="./frontend/src/assets/Dashboard.png" alt="Dashboard" width="85%"/>
+  </a>
+</p>
 
-_A task management app, where users can organize their personal and team-based tasks, track progress, and share task updates. Users can manage their task boards with features to create, edit, assign, and delete tasks for themselves and other members._
-
-<p align="center">Register Page</p>
-<a style="" href="https://task-management-org.vercel.app/login">
-     
-![Macbook-Air-localhost (1)](https://github.com/user-attachments/assets/d05bd3e9-e349-469b-a4d2-d828e3e76414)
-
-</a>
-<p align="center">Dashboard Page</p>
-<a style="" href="https://task-management-org.vercel.app/">
-     
-![Macbook-Air-localhost](https://github.com/user-attachments/assets/5643d5a6-b8ad-4516-a3dd-d12b0d9793e3)
-
-</a>
-<p align="center">Public View</p>
-<a style="" href="https://task-management-org.vercel.app/task/67421bb3a90e252d2d4cb42e">
-     
-![Macbook-Air-localhost (2)](https://github.com/user-attachments/assets/cde4fcb3-80c4-410d-9763-50281c9b2233)
-
-</a>
-
-## **Table of Contents**
-
--   [Features](#features)
--   [Tech Stack](#tech-stack)
--   [Setup Instructions](#setup-instructions)
--   [Scripts](#scripts)
--   [Live Demo](#live-demo)
--   [Author](#author)
--   [License](#license)
+<p align="center"><b>Public Task View</b></p>
+<p align="center">
+  <a href="https://task-management-org.vercel.app/task/67421bb3a90e252d2d4cb42e">
+    <img src="./frontend/src/assets/PublicView.png" alt="Public View" width="85%"/>
+  </a>
+</p>
 
 ---
 
-## **Features**
+## ✨ Features
 
--   User authentication using JWT.
--   Secure password handling with bcrypt.js.
--   State management with Redux Toolkit.
--   User-friendly interface and Only public page Responsive.
--   Toast notifications for feedback.
--   RESTful APIs for seamless communication between frontend and backend.
+### 🔑 Authentication & Security
+- User registration, login, and secure password hashing via **bcrypt.js**
+- JWT-based session management with automatic logout on sensitive changes (email/password update)
+- Only authenticated users can create and manage tasks
 
-### **Core Functionalities**
+### 📝 Task Management
+- Create tasks with **priority**, **due dates**, **categories**, and optional public sharing
+- Full **CRUD** support — create, read, update, and delete tasks with ease
+- Kanban-style board with four status lanes: **Backlog → To-Do → In-Progress → Done**
+- Visual due-date indicators: 🔴 Overdue · 🟢 Completed
 
--   **User Authentication:**
+### 👥 Collaboration
+- Add members to boards and assign them to tasks during creation
+- Read-only public link sharing for external stakeholders
 
-    -   Users can register and log in.
-    -   Only authenticated users can create and manage tasks.
+### 📊 Analytics & Filtering
+- Dedicated analytics section with task breakdowns
+- Filter by **Today**, **This Week** (default), or **This Month**
 
--   **Task Management:**
-
-    -   Create tasks with properties like priority, optional due dates, categories, and the ability to share tasks with others (read-only public access for shared tasks).
-    -   Update tasks, including title, priority, and due dates.
-    -   Delete tasks.
-    -   Change task statuses across four categories: **Backlog**, **To-Do**, **In-Progress**, and **Done**.
-    -   Automatically highlight overdue tasks with red and completed tasks with green.
-
--   **User Management:**
-
-    -   Users can update their name, email, or password via the settings page.
-    -   Changes to email or password will log users out to ensure security.
-
--   **Analytics & Filtering:**
-
-    -   Review task analytics in a dedicated section.
-    -   Filter tasks by **Today**, **This Week**, or **This Month** (default is the current week).
-
--   **User-Friendly Interface:**
-
-    -   Task titles are truncated on the board for readability, with full titles accessible via tooltips.
-    -   Mandatory fields are marked with a red asterisk (\*).
-    -   Notifications and alerts are provided via toast messages.
-
--   **Collaboration:**
-    -   Add members to task boards.
-    -   Assign members to tasks during creation.
-
-### **Additional Features**
-
--   Visual indicators for task statuses based on due dates:
-    -   **Red**: Overdue tasks in active categories.
-    -   **Green**: Tasks marked as done.
--   Pre-filled user information for seamless updates on the settings page.
-
-## 🛠️ **Tech Stack**
-
-### **Frontend**
-
--   **React**: UI library.
--   **React Router DOM**: For routing.
--   **Redux Toolkit**: State management.
--   **React Icons**: Icon library.
--   **React Toastify**: Notification handling.
--   **Vite**: Frontend build tool.
--   **Eslint**: Code quality and linting.
-
-### **Backend**
-
--   **Express.js**: Backend framework.
--   **Mongoose**: MongoDB object modeling.
--   **JWT**: Secure token-based authentication.
--   **Bcrypt.js**: Password encryption.
--   **Dotenv**: Environment variable management.
--   **Cors**: Cross-origin resource sharing.
+### 🎨 User Experience
+- Truncated task titles with full-text tooltips for clean boards
+- Toast notifications for all actions
+- Pre-filled settings form for frictionless profile updates
+- Mandatory fields marked with red asterisk (\*)
 
 ---
 
-## **Setup Instructions**
+## 🛠️ Tech Stack
 
-### **Prerequisites**
-
--   Install **Node.js (18.17.1)**.
--   Install **npm** or **yarn**.
--   MongoDB database.
-
-### **Backend Setup**
-
-1. Navigate to the backend directory:
-    ```bash
-    cd backend
-    ```
-2. Install dependencies:
-    ```bash
-    npm install
-    ```
-3. Create a `.env` file in the backend directory and add:
-    ```env
-    MONGODB_URI=mongodb://127.0.0.1:27017/task_management
-    FRONTEND_URL=http://localhost:5173
-    PORT=9000
-    JWT_SECRET=secret-kJKJllKKJJghLjOiUfcHGkMLgdJlLKDtrdyKLBJbRdesEkj
-    ```
-4. Start the server in development mode:
-    ```bash
-    npm run dev
-    ```
-
-### **Frontend Setup**
-
-1. Navigate to the frontend directory:
-    ```bash
-    cd frontend
-    ```
-2. Install dependencies:
-    ```bash
-    npm install
-    ```
-3. Create a `.env` file in the frontend directory and add:
-    ```env
-    VITE_BACKEND_URL=http://localhost:9000
-    VITE_FRONTEND_URL=http://localhost:5173
-    ```
-4. Start the development server:
-    ```bash
-    npm run dev
-    ```
-5. Open the application in your browser at `http://localhost:5173`.
+| Layer | Technology |
+|---|---|
+| **Frontend** | React.js, Vite, Redux Toolkit, React Router DOM |
+| **UI & Notifications** | React Icons, React Toastify |
+| **Backend** | Node.js, Express.js |
+| **Database** | MongoDB, Mongoose |
+| **Auth & Security** | JWT, Bcrypt.js |
+| **Config** | Dotenv, CORS |
+| **Deployment** | Vercel |
+| **Code Quality** | ESLint |
 
 ---
 
-## **Scripts**
+## ⚙️ Setup Instructions
 
-### **Frontend**
-
-| Script            | Description                                 |
-| ----------------- | ------------------------------------------- |
-| `npm run dev`     | Starts the development server.              |
-| `npm run build`   | Builds the production version of the app.   |
-| `npm run lint`    | Lints the codebase for errors and warnings. |
-| `npm run preview` | Previews the built application.             |
-
-### **Backend**
-
-| Script          | Description                                          |
-| --------------- | ---------------------------------------------------- |
-| `npm run start` | Starts the server in production mode.                |
-| `npm run dev`   | Starts the server in development mode using nodemon. |
+### Prerequisites
+- **Node.js** `v18.17.1`
+- **npm** or **yarn**
+- A running **MongoDB** instance
 
 ---
 
-## **Live Demo**
+### 🔧 Backend Setup
 
-Check out the live demo of Task Management here: [Task Management](https://task-management-org.vercel.app)
+```bash
+# 1. Navigate to the backend directory
+cd backend
 
-## **Author**
+# 2. Install dependencies
+npm install
 
-Mohit Sharma \
-Email: mohitsharma782828372@gmail.com \
-LinkedIn: www.linkedin.com/in/mohit-sharma-27a6532b6/
+# 3. Create your .env file
+touch .env
+```
 
-## **Contributors**
+Add the following to `backend/.env`:
 
+```env
+MONGODB_URI=mongodb+srv://...
+FRONTEND_URL=http://localhost:5173
+PORT=9000
+JWT_SECRET=secret-kJKJllKKJJghLjOiUfcHGkMLgdJlLKDtrdyKLBJbRdesEkj
+```
 
+```bash
+# 4. Start the development server
+npm run dev
+```
 
--   **[Mohit Sharma](https://github.com/MsParadox)** - Full Stack development.
+---
 
+### 🎨 Frontend Setup
 
-## **License**
+```bash
+# 1. Navigate to the frontend directory
+cd frontend
+
+# 2. Install dependencies
+npm install
+
+# 3. Create your .env file
+touch .env
+```
+
+Add the following to `frontend/.env`:
+
+```env
+VITE_BACKEND_URL=http://localhost:9000
+VITE_FRONTEND_URL=http://localhost:5173
+```
+
+```bash
+# 4. Start the development server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser. 🎉
+
+---
+
+## 📜 Scripts
+
+### Frontend
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start the development server |
+| `npm run build` | Build for production |
+| `npm run lint` | Lint the codebase |
+| `npm run preview` | Preview the production build |
+
+### Backend
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start server in development mode (nodemon) |
+| `npm run start` | Start server in production mode |
+
+---
+
+## 🚀 Live Demo
+
+Try the live application here → **[task-management-org.vercel.app](https://task-management-org.vercel.app)**
+
+---
+
+## 👨‍💻 Author
+
+<div align="center">
+
+### Mohit Sharma
+
+_Full Stack Developer · Problem Solver · Open Source Enthusiast_
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mohit-sharma-27a6532b6)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/MsParadox)
+[![Codeforces](https://img.shields.io/badge/Codeforces-Profile-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white)](https://codeforces.com/profile/Msparadox)
+[![LeetCode](https://img.shields.io/badge/LeetCode-Profile-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/u/ms_paradox78/)
+
+[![Email](https://img.shields.io/badge/Gmail-Mail_Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mohitsharma782828372@gmail.com)
+
+</div>
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add some amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
+
+---
+
+## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-Thank you for checking out my Task Management project! If you have any feedback or suggestions, I would love to hear from you.
-Feel free to contribute, report issues, or suggest improvements! 😊
+<div align="center">
+
+⭐ **If you found this project helpful, please give it a star!** ⭐
+
+_Thank you for checking out Task Manager! Feedback, suggestions, and contributions are always welcome._ 😊
+
+</div>

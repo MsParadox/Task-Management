@@ -92,10 +92,27 @@ const Register_Login = () => {
 				e.target.disabled = false;
 				toast.dismiss();
 				if (json.token) {
-					setIsRegister(false);
-					setPassword("");
-					setCPassword("");
-					toast.success(json?.message);
+					localStorage.setItem("token", json.token);
+					fetch(`${import.meta.env.VITE_BACKEND_URL}/api/user/profile`, {
+						method: "GET",
+						headers: {
+							Authorization: `Bearer ${json.token}`,
+						},
+					})
+						.then((response) => response.json())
+						.then((profileJson) => {
+							if (profileJson?.data) {
+								dispatch(addAuth(profileJson.data));
+								navigate("/");
+								toast.success(json?.message);
+							} else {
+								toast.error(profileJson?.message || "Unable to load user profile");
+							}
+						})
+						.catch((profileError) => {
+							console.error("Error:", profileError);
+							toast.error("Something went wrong");
+						});
 				} else {
 					toast.error(json?.message);
 				}
